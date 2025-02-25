@@ -1,0 +1,14 @@
+{
+    "name": "markdown-editor",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+        "start": "concurrently --kill-others-on-fail \"npm start --prefix server\" \"npm start --prefix client\"",
+        "server": "npm start --prefix server",
+        "client": "npm start --prefix client"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}
