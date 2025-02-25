@@ -98,7 +98,7 @@ markdown-editor/
 
 3. Install Dependencies:
    ```bash
-   npm install:all
+   npm run install:all
    ```
 
 4. Start the Application ( It will start both Backend and Frontend ):
