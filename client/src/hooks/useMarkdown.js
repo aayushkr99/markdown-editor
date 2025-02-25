@@ -1,4 +1,3 @@
-// src/hooks/useMarkdown.js
 import { useState, useEffect } from 'react';
 import { convertMarkdownLocal } from '../services/markdownService';
 

@@ -1,4 +1,3 @@
-// src/config/index.js
 const config = {
     development: {
       SERVER_URL: "http://localhost:5000",

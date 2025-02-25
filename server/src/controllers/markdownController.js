@@ -1,5 +1,11 @@
 const marked = require('marked');
 const hljs = require('highlight.js');
+const createDOMPurify = require('dompurify');
+const { JSDOM } = require('jsdom');
+
+// Create a DOM window for DOMPurify to use
+const window = new JSDOM('').window;
+const DOMPurify = createDOMPurify(window);
 
 // Configure marked options for syntax highlighting
 marked.setOptions({
@@ -57,10 +63,17 @@ const convertMarkdown = async (req, res) => {
 
 // Basic HTML sanitization (a more robust solution would use a library like DOMPurify)
 const sanitizeHtml = (html) => {
-  // This is a very basic sanitization - in production, use a proper sanitizer
-  return html
-    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-    .replace(/on\w+="[^"]*"/g, '');
+  // This is a very basic sanitization
+  // return html
+  //   .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+  //   .replace(/on\w+="[^"]*"/g, '');
+  return DOMPurify.sanitize(html, {
+    ADD_TAGS: ['iframe'], // Optional: allow specific tags if needed
+    ADD_ATTR: ['allowfullscreen', 'frameborder', 'src'], // Optional: allow specific attributes
+    FORBID_TAGS: ['style', 'form'], // Optional: specifically forbid certain tags
+    FORBID_ATTR: ['style', 'onerror', 'onload'], // Optional: specifically forbid certain attributes
+    ALLOW_DATA_ATTR: false // Disallow data attributes which can be used for XSS
+  });
 };
 
 module.exports = {

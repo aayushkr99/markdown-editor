@@ -1,4 +1,3 @@
-// src/services/markdownService.js
 import api from './api';
 import { getSocket } from './socket';
 import config from '../config';

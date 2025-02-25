@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect } from 'react';
 import SplitPane from 'split-pane-react/esm/SplitPane';
 import Editor from './components/editor/EditorPane';
