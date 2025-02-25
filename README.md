@@ -84,43 +84,42 @@ markdown-editor/
 - Node.js (v14.x or later)
 - npm (v6.x or later)
 
-### Backend Setup
+### Project Setup
 
-1. Navigate to the server directory:
+1. Clone the Repository:
    ```bash
-   cd server
+   git clone https://github.com/aayushkr99/markdown-editor.git
    ```
 
-2. Install dependencies:
+2. Navigate to the project root directory:
    ```bash
-   npm install
+   cd markdown-editor
    ```
 
-3. Start the development server:
+3. Install Dependencies:
    ```bash
-   npm run dev
+   npm install:all
    ```
 
-   The server will be running at http://localhost:5000.
-
-### Frontend Setup
-
-1. In a new terminal, navigate to the client directory:
-   ```bash
-   cd client
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
+4. Start the Application ( It will start both Backend and Frontend ):
    ```bash
    npm start
    ```
 
-   The application will open automatically at http://localhost:3000.
+5. Start the Backend Application only ( optional ):
+   ```bash
+   npm run server
+   ```
+
+6. Start the Frontend Application only ( optional ):
+   ```bash
+   npm run client
+   ```
+
+
+   The Backend server will be running at http://localhost:5000.
+   The Frontend server will be running at http://localhost:3000.
+
 
 ## Usage
 
