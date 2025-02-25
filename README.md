@@ -36,25 +36,44 @@ markdown-editor/
 │   │   └── ...
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── Editor.js    # Markdown editor component
-│   │   │   ├── Preview.js   # Live preview component
-│   │   │   ├── Header.js    # Application header
-│   │   │   └── Footer.js    # Application footer
-│   │   ├── App.js           # Main application component
-│   │   ├── index.js         # Entry point
-│   │   ├── App.css          # Global styles
+│   │   │   ├── common/
+│   │   │   │   └── Button.js    # Reusable button component
+│   │   │   ├── editor/
+│   │   │   │   ├── EditorPane.js  # Markdown editor component
+│   │   │   │   └── PreviewPane.js # Live preview component
+│   │   │   └── layout/
+│   │   │       ├── Header.js    # Application header
+│   │   │       └── Footer.js    # Application footer
+│   │   ├── config/
+│   │   │   └── index.js         # Configuration settings
+│   │   ├── hooks/
+│   │   │   ├── useMarkdown.js   # Custom hook for markdown processing
+│   │   │   └── useTheme.js      # Custom hook for theme management
+│   │   ├── services/
+│   │   │   ├── api.js           # General API service
+│   │   │   ├── markdownService.js # Markdown processing service
+│   │   │   └── socket.js        # WebSocket service
+│   │   ├── App.js               # Main application component
+│   │   ├── index.js             # Entry point
+│   │   ├── App.css              # Global styles
 │   │   └── ...
 │   ├── package.json
 │   └── ...
 ├── server/                  # Node.js backend
 │   ├── src/
-│   │   ├── index.js         # Server entry point
+│   │   ├── config/
+│   │   │   └── index.js         # Server configuration
+│   │   ├── controllers/
+│   │   │   └── markdownController.js  # Markdown processing controller
+│   │   ├── middleware/
+│   │   │   └── errorHandler.js  # Error handling middleware
 │   │   ├── routes/
-│   │   │   └── api.js       # API routes
-│   │   └── controllers/
-│   │       └── markdown.js  # Markdown processing controller
+│   │   │   └── api.js           # API routes
+│   │   └── index.js             # Server entry point
 │   ├── package.json
 │   └── ...
+├── package.json             # Root package.json for monorepo setup
+├── package-lock.json        # Dependencies lock file
 └── README.md                # Project documentation
 ```
 
