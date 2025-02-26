@@ -120,6 +120,24 @@ markdown-editor/
    The Backend server will be running at http://localhost:5000.
    The Frontend server will be running at http://localhost:3000.
 
+## Conversion Method
+
+### Available Options for `CONVERSION_METHOD`
+
+The application supports three different methods for converting Markdown to HTML. You can set the `CONVERSION_METHOD` based on your preference:
+
+1. **API** (`CONVERSION_METHOD = "api"`)
+   - Calls the backend API to convert Markdown to HTML.
+
+2. **Socket** (`CONVERSION_METHOD = "socket"`)
+   - Uses a WebSocket connection for Markdown conversion.
+
+3. **Local** (`CONVERSION_METHOD = "local"`)
+   - Converts Markdown to HTML directly in the frontend without calling the backend.
+
+Ensure that you configure the `CONVERSION_METHOD` properly based on your setup.
+
+
 
 ## Usage
 
