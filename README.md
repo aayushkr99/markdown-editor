@@ -124,7 +124,7 @@ markdown-editor/
 
 ### Available Options for `CONVERSION_METHOD`
 
-The application supports three different methods for converting Markdown to HTML. You can set the `CONVERSION_METHOD` based on your preference:
+The application supports three different methods for converting Markdown to HTML. You can set the `CONVERSION_METHOD` ( client/src/config/index.js ) based on your preference:
 
 1. **API** (`CONVERSION_METHOD = "api"`)
    - Calls the backend API to convert Markdown to HTML.
