@@ -13,13 +13,25 @@ export const convertMarkdownAPI = async (markdown) => {
   }
 };
 
-export const convertMarkdownSocket = (markdown, callback) => {
-  const socket = getSocket();
-  socket.emit('convert-markdown', markdown);
-  socket.once('markdown-converted', (data) => {
-    callback(data.html);
+export const convertMarkdownSocket = (markdown) => {
+  return new Promise((resolve, reject) => {
+    const socket = getSocket();
+    socket.emit('convert-markdown', markdown);
+
+    socket.once('markdown-converted', (data) => {
+      if (data.error) {
+        reject(new Error(data.error));
+      } else {
+        resolve(data.html);
+      }
+    });
+
+    socket.once('connect_error', (err) => {
+      reject(err);
+    });
   });
 };
+
 
 export const convertMarkdownLocal = (markdown) => {
   try {

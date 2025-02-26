@@ -5,6 +5,7 @@ const config = {
       API_ENDPOINTS: {
         MARKDOWN: "/api/markdown"
       },
+      CONVERSION_METHOD: "socket",   // [ "api", "socket", "local" ]
       DEBOUNCE_TIME: 100
     },
     production: {
@@ -13,6 +14,7 @@ const config = {
       API_ENDPOINTS: {
         MARKDOWN: "/api/markdown"
       },
+      CONVERSION_METHOD: "api",   // [ "api", "socket", "local" ]
       DEBOUNCE_TIME: 200
     }
   };
@@ -20,3 +22,7 @@ const config = {
   const ENV = process.env.NODE_ENV || "development";
   
   export default config[ENV];
+
+  //CONVERSION_METHOD : api -> it will call the backend api
+  //                  : socket -> it will connect through socket
+  //                  : local -> it will parse locally ( no backend is involved )
